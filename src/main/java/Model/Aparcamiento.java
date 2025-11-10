@@ -26,11 +26,11 @@ public class Aparcamiento {
                     plazasOcupadas++; // Incrementa el número de coches dentro
                     System.out.printf("%s ha entrado. Plazas ocupadas: %d%n", nombreCoche,  plazasOcupadas);
                 }
-                //Contador inverso para bloquear cuando estén todas las plazas ocupadas
+                // Contador inverso para bloquear cuando estén todas las plazas ocupadas
                 primerosEnLog.countDown();
             } else {
                 // Si no hay permisos disponibles, el coche debe esperar
-                // Espera a que los 3 primeros impriman el mensaje de haber entrado
+                // Espera (bloquea) a que los 3 primeros impriman el mensaje de haber entrado
                 primerosEnLog.await();
 
                 System.out.println(nombreCoche + " está esperando...");
